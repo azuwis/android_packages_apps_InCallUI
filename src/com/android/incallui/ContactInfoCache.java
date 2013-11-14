@@ -478,7 +478,7 @@ public class ContactInfoCache implements ContactsAsyncHelper.OnImageLoadComplete
 
                     // Display a geographical description string if available
                     // (but only for incoming calls.)
-                    if (isIncoming) {
+                    if (true) {
                         // TODO (CallerInfoAsyncQuery cleanup): Fix the CallerInfo
                         // query to only do the geoDescription lookup in the first
                         // place for incoming calls.
