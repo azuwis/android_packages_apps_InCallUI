@@ -727,6 +727,9 @@ public class CallCardPresenter extends Presenter<CallCardPresenter.CallCardUi>
         if (TextUtils.isEmpty(contactInfo.name)) {
             return contactInfo.location;
         }
+        if (!TextUtils.isEmpty(contactInfo.location)) {
+            return contactInfo.number + " " + contactInfo.location;
+        }
         return contactInfo.number;
     }
 
