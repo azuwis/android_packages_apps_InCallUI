@@ -30,47 +30,7 @@
         in time when the process is killed and an incoming call is received.
     -->
     <application
-            android:persistent="true"
-            android:name="InCallApp"
-            android:label="@string/inCallLabel"
-            android:supportsRtl="true">
-
-        <!-- Main in-call UI activity.  This is never launched directly
-             from outside the phone app; instead, it's either launched by
-             the OutgoingCallBroadcaster (for outgoing calls), or as the
-             fullScreenIntent of a notification (for incoming calls.) -->
-        <activity android:name=".InCallActivity"
-                  android:theme="@style/Theme.InCallScreen"
-                  android:label="@string/inCallLabel"
-                  android:excludeFromRecents="true"
-                  android:launchMode="singleInstance"
-                  android:screenOrientation="nosensor"
-                  android:configChanges="keyboardHidden"
-                  android:exported="false">
-        </activity>
-
-        <activity android:name=".InCallCardActivity"
-                  android:label="@string/inCallLabel"
-                  android:excludeFromRecents="true"
-                  android:launchMode="singleInstance"
-                  android:configChanges="keyboardHidden"
-                  android:exported="false">
-        </activity>
-
-        <service android:name="CallHandlerService">
-            <intent-filter>
-                <action android:name="com.android.services.telephony.common.ICallHandlerService" />
-            </intent-filter>
-        </service>
-
-        <!-- BroadcastReceiver for receiving Intents from Notification mechanism. -->
-        <receiver android:name="InCallApp$NotificationBroadcastReceiver" exported="false">
-            <intent-filter>
-                <action android:name="com.android.incallui.ACTION_HANG_UP_ONGOING_CALL" />
-                <action android:name="com.android.incallui.ACTION_DISMISS_ICOMING_CALL" />
-                <action android:name="com.android.incallui.ACTION_ANSWER_ICOMING_CALL" />
-            </intent-filter>
-        </receiver>
-
-    </application>
+        android:persistent="true"
+        android:hasCode="false"
+        />
 </manifest>
